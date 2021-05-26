@@ -38,6 +38,7 @@ export function switchedObject(array, container) {
         const beastParams = {
           type: params.value,
           name: params.name,
+          age: params.age,
         };
         beast = new Beast(beastParams);
         container.arr.push(beast);
