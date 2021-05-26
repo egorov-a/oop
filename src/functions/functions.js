@@ -1,9 +1,11 @@
 import { Fish } from "../fish/Fish";
 import { Bird } from "../bird/Bird";
+import { Beast } from "../beast/Beast";
 
 export function switchedObject(array, container) {
   let fish = null;
   let bird = null;
+  let beast = null;
 
   array.forEach((element) => {
     let params = {
@@ -28,6 +30,14 @@ export function switchedObject(array, container) {
         };
         bird = new Bird(birdParams);
         container.arr.push(bird);
+        break;
+      case "3":
+        const beastParams = {
+          type: params.value,
+          name: params.name,
+        };
+        beast = new Beast(beastParams);
+        container.arr.push(beast);
         break;
       default:
         break;
