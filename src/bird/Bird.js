@@ -15,4 +15,6 @@ export class Bird extends Animals {
 
     return str;
   }
+
+  skip() {}
 }
