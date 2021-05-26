@@ -5,6 +5,7 @@ export class Bird extends Animals {
     super({ name });
     this.flight = flight;
     this.age = age;
+    this.className = "Bird";
   }
 
   buildObjectFromStr(obj) {
@@ -18,4 +19,29 @@ export class Bird extends Animals {
   }
 
   skip() {}
+
+  multimethod(objectOne, objectTwo, file) {
+    switch (objectTwo.className) {
+      case "Fish":
+        this.fish(objectOne, objectTwo, file);
+        break;
+      case "Bird":
+        this.bird(objectOne, objectTwo, file);
+        break;
+      default:
+        return 0;
+    }
+  }
+
+  fish(objectOne, objectTwo, file) {
+    file.writeStrFromFile(this.buildObjectFromStr(objectOne));
+    file.writeStrFromFile(objectTwo.buildObjectFromStr(objectTwo));
+    file.writeStrFromFile("Bird - Fish");
+  }
+
+  bird(objectOne, objectTwo, file) {
+    file.writeStrFromFile(this.buildObjectFromStr(objectOne));
+    file.writeStrFromFile(objectTwo.buildObjectFromStr(objectTwo));
+    file.writeStrFromFile("Bird - Bird");
+  }
 }
