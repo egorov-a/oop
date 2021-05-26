@@ -28,6 +28,9 @@ export class Bird extends Animals {
       case "Bird":
         this.bird(objectOne, objectTwo, file);
         break;
+      case "Beast":
+        this.beast(objectOne, objectTwo, file);
+        break;
       default:
         return 0;
     }
@@ -43,5 +46,11 @@ export class Bird extends Animals {
     file.writeStrFromFile(this.buildObjectFromStr(objectOne));
     file.writeStrFromFile(objectTwo.buildObjectFromStr(objectTwo));
     file.writeStrFromFile("Bird - Bird");
+  }
+
+  beast(objectOne, objectTwo, file) {
+    file.writeStrFromFile(this.buildObjectFromStr(objectOne));
+    file.writeStrFromFile(objectTwo.buildObjectFromStr(objectTwo));
+    file.writeStrFromFile("Bird - Beast");
   }
 }
