@@ -1,0 +1,42 @@
+import { Fish } from "../fish/Fish";
+import { Bird } from "../bird/Bird";
+
+export function switchedObject(array, container) {
+  let fish = null;
+  let bird = null;
+
+  array.forEach((element) => {
+    let params = {
+      id: element[0],
+      value: element[1],
+      name: element[2],
+    };
+
+    switch (params.id) {
+      case "1":
+        let fishParams = {
+          location: params.value,
+          name: params.name,
+        };
+        fish = new Fish(fishParams);
+        container.arr.push(fish);
+        break;
+      case "2":
+        const birdParams = {
+          flight: params.value,
+          name: params.name,
+        };
+        bird = new Bird(birdParams);
+        container.arr.push(bird);
+        break;
+      default:
+        break;
+    }
+  });
+}
+
+export function correctFile(data) {
+  return data.map((element) => {
+    return element.replace("\r", "");
+  });
+}
