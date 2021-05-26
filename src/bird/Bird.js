@@ -1,9 +1,10 @@
 import { Animals } from "../animals/Animals";
 
 export class Bird extends Animals {
-  constructor({ flight, name }) {
+  constructor({ flight, name, age }) {
     super({ name });
     this.flight = flight;
+    this.age = age;
   }
 
   buildObjectFromStr(obj) {
