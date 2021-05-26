@@ -54,3 +54,7 @@ export function correctFile(data) {
     return element.replace("\r", "");
   });
 }
+
+export function numberLetters(name) {
+  return name.length;
+}
