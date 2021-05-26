@@ -16,4 +16,6 @@ export class Beast extends Animals {
 
     return str;
   }
+
+  skip() {}
 }

@@ -3,4 +3,6 @@ export class Animals {
     this.name = name;
     this.age = age;
   }
+
+  skip() {}
 }

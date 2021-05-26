@@ -16,4 +16,8 @@ export class Fish extends Animals {
 
     return str;
   }
+
+  skip(file, obj) {
+    file.writeStrFromFile(this.buildObjectFromStr(obj));
+  }
 }
